@@ -7,33 +7,36 @@ Este diagrama UML representa as funcionalidades do componente iPhone, abrangendo
 ```mermaid
 classDiagram
     class iPhone {
-        +tocar()
-        +pausar()
-        +selecionarMusica(String musica)
-        +ligar(String numero)
-        +atender()
-        +iniciarCorreioVoz()
-        +exibirPagina(String url)
-        +adicionarNovaAba()
-        +atualizarPagina()
+        +void tocar()
+        +void pausar()
+        +void selecionarMusica(String musica)
+        +void ligar(String numero)
+        +void atender()
+        +void iniciarCorreioVoz()
+        +void exibirPagina(String url)
+        +void adicionarNovaAba()
+        +void atualizarPagina()
     }
 
-    interface ReprodutorMusical {
-        +tocar()
-        +pausar()
-        +selecionarMusica(String musica)
+    class ReprodutorMusical {
+        <<interface>>
+        +void tocar()
+        +void pausar()
+        +void selecionarMusica(String musica)
     }
 
-    interface AparelhoTelefonico {
-        +ligar(String numero)
-        +atender()
-        +iniciarCorreioVoz()
+    class AparelhoTelefonico {
+        <<interface>>
+        +void ligar(String numero)
+        +void atender()
+        +void iniciarCorreioVoz()
     }
 
-    interface NavegadorInternet {
-        +exibirPagina(String url)
-        +adicionarNovaAba()
-        +atualizarPagina()
+    class NavegadorInternet {
+        <<interface>>
+        +void exibirPagina(String url)
+        +void adicionarNovaAba()
+        +void atualizarPagina()
     }
 
     iPhone ..|> ReprodutorMusical
